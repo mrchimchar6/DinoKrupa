@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <!-- Happy Birthday Krupa -->
-     <!-- Love you -->
+    <!-- Love you -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Dino Game For Krupa</title>
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,14 +16,20 @@
 </head>
 <body>
     <div class="world" data-world>
-        <div class="highscore" data-Highscore><span class="high">HI</span> 10000 </div>
+        <div class="highscore" data-Highscore><span class="high">HI</span> 0 </div>
         <div class="separator">|</div>
         <div class="score" data-score>0</div>
-        <div class="start-screen" data-start-screen>Press any key to Start</div>
+        <div class="start-screen" data-start-screen>Tap or Press any key to Start</div>
+        
+        <!-- Ground -->
         <img src="images/ground.png" class="ground" data-ground>
         <img src="images/ground.png" class="ground" data-ground>
+
+        <!-- Clouds -->
         <img src="images/clouds.png" class="clouds" data-clouds>
         <img src="images/clouds.png" class="clouds" data-clouds>
+
+        <!-- Dino -->
         <img src="images/dino-stationary.png" class="dino" data-dino>
     </div>
 </body>
