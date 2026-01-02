@@ -1,93 +1,111 @@
 *, *::before, *::after {
     box-sizing: border-box;
     user-select: none;
-  }
-  
-  body {
     margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    touch-action: none;       /* prevent swipe scrolling */
+    overscroll-behavior: none;
+}
+
+body {
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 100vh;
     font-family: 'Press Start 2P', cursive;
     background-color: #f7f7f7;
-  }
-  
-  .world {
+}
+
+.world {
     overflow: hidden;
     position: relative;
-  }
-  
-  .score {
+    touch-action: none; /* prevent mobile scrolling */
+    max-width: 100vw;
+    max-height: 100vh;
+}
+
+.score, .highscore, .separator {
     position: absolute;
     font-size: 2vmin;
     color: #535353;
+}
+
+.score {
     right: 1vmin;
     top: 1vmin;
-  }
-  
-  .highscore {
-    position: absolute;
-    font-size: 2vmin;
-    color: #535353;
+}
+
+.highscore {
     right: 10vmin;
     top: 1vmin;
-  }
-  .separator {
-    position: absolute;
-    font-size: 2vmin;
-    color: #535353;
+}
+
+.separator {
     right: 7vmin;
     top: 1vmin;
-  }
-  
-  .start-screen {
+}
+
+.start-screen {
     position: absolute;
-    font-size: 2vmin;
+    font-size: 3vmin;
     color: #535353;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-  }
-  
-  .hide {
+    text-align: center;
+    line-height: 1.5;
+}
+
+.hide {
     display: none;
-  }
-  
-  .ground {
+}
+
+.ground {
     --left: 0;
     position: absolute;
     width: 300%;
     bottom: 0;
-    left: calc(var(--left) * 1%)
-  }
-  
-  .clouds {
+    left: calc(var(--left) * 1%);
+}
+
+.clouds {
     --left: 0;
     top: 0;
     position: absolute;
     width: 150%;
     left: calc(var(--left) * 1%);
-  }
+}
 
 .dino {
     --bottom: 0;
     position: absolute;
-    left: 1%;
-    height: 30%;
+    left: 5%;
+    height: 25%; /* slightly smaller on mobile */
     bottom: calc(var(--bottom) * 1%);
 }
-  
+
 .cactus {
     position: absolute;
     left: calc(var(--left) * 1%);
-    height: 30%;
+    height: 25%; /* slightly smaller on mobile */
     bottom: 0;
 }
 
-.logo {
-  position: absolute;
-  left: 50%;
-  top: 1%;
-  right: 50%;
+@media (max-width: 500px) {
+    .start-screen {
+        font-size: 4vmin;
+    }
+
+    .dino, .cactus {
+        height: 30%; /* scale up for small phones */
+    }
+
+    .score, .highscore, .separator {
+        font-size: 3vmin;
+    }
 }
